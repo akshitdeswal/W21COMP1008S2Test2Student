@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /*
@@ -33,6 +34,13 @@ public class Car {
     }
 
     public void setMake(String make) {
+    List<String> validMakes = Arrays.asList("Ford", "Honda", "Porsche");
+    if(validMakes.contains(make)){
+        this.make = make;
+    }
+    else{
+        throw new IllegalArgumentException(make + "is not valid, Please choose from these" + validMakes);
+    }
     }
 
     public void setModel(String model) {
