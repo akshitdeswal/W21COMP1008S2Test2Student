@@ -4,10 +4,12 @@ public class CarLot {
     private ArrayList<Car> cars;
 
     public CarLot(){
+        ArrayList<Car> cars = new ArrayList<>();
     }
 
     public void addCar(Car car)
     {
+        cars.add(car);
     }
 
     public double getInventoryValue()
