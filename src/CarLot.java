@@ -25,15 +25,18 @@ public class CarLot {
     public ArrayList<Car> getCarsByBrand(String manufacturer)
     {
         ArrayList<Car> allCars = new ArrayList<>();
+        if(allCars.size() == 0){
+            return (ArrayList<Car>) allCars;
+        }
         for (Car car:cars)
         {
             if(car.getMake().equals(manufacturer))
             {
                 allCars.add(car);
             }
-//            else
+//            else if(!(car.getMake().equals(manufacturer)))
 //            {
-//                throw new IllegalArgumentException("Value are null");
+//                return (ArrayList<Car>) allCars;
 //            }
             //allCars.addAll(car.getMake());
         }
@@ -42,6 +45,7 @@ public class CarLot {
 
     public ArrayList<Car> getCarsByModel(String model)
     {
+
         return null;
     }
 
