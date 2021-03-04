@@ -45,8 +45,18 @@ public class CarLot {
 
     public ArrayList<Car> getCarsByModel(String model)
     {
+        ArrayList<Car> carsByModel = new ArrayList<>();
+        if(carsByModel.size() == 0){
+            return (ArrayList<Car>) carsByModel;
+        }
+        for (Car car:cars){
+            if(car.getModel().equals(model)&& car.getMake().equals("Ford"))
+            {
+                carsByModel.add(allCars);
+            }
 
-        return null;
+        }
+        return carsByModel;
     }
 
     public ArrayList<Car> getCarsBelowPrice(double maxPrice)
@@ -76,6 +86,6 @@ public class CarLot {
 
     public String toString()
     {
-        return "";
+        return String.format("We have %d cars worth $%.2f",getNumOfCarsInInventory(),getInventoryValue());
     }
 }
