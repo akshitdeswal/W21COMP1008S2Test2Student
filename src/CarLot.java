@@ -4,7 +4,7 @@ public class CarLot {
     private ArrayList<Car> cars;
 
     public CarLot(){
-        ArrayList<Car> cars = new ArrayList<>();
+        cars = new ArrayList<>();
     }
 
     public void addCar(Car car)
@@ -14,7 +14,12 @@ public class CarLot {
 
     public double getInventoryValue()
     {
-        return -1;
+        double price = 0;
+        for (Car car:cars)
+        {
+            price = price + car.getPrice();
+        }
+        return price;
     }
 
     public ArrayList<Car> getCarsByBrand(String manufacturer)
